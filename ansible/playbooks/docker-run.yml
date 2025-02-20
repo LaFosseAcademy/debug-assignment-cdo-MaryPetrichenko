@@ -1,8 +1,8 @@
 - hosts: all
   become: true
   tasks:
-    - name: Navigate to directory containing docker-compose.yml
-      shell: cd devops-assessment
+    - name: Create the directory containing docker-compose.yml
+      shell: mkdir devops-assessment
       args:
         chdir: /home/ec2-user
 
