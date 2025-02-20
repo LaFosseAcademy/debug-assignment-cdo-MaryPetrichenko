@@ -80,3 +80,8 @@ The application is using two docker images:
 The images were prebuild and are accessible from the docker hub.
 Docker-compose.yml file points the docker images from the hub. The images are downloaded automatically on the first run.
 
+# Access to the current application
+
+Currently deployed application can be accessed via the following link:
+http://ec2-100-25-37-10.compute-1.amazonaws.com:3000/tour-de-france/
+Other endpoints are given in the previous sections.
