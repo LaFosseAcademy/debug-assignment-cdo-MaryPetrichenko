@@ -1,6 +1,6 @@
 resource "aws_security_group" "http_server_sg" {
   name   = "http_server_sg"
-  vpc_id = "vpc-0b9c3fe4250c8f915"
+  vpc_id = aws_default_vpc.default.id  
   tags = {
     name = "http_server_sg"
   }
