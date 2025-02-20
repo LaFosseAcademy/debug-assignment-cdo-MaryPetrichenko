@@ -1,12 +1,21 @@
 - hosts: all
   become: true
   tasks:
-    - name: Navigate to directory containing docker-compose.yml
-      shell: cd devops-assessment
+    - name: Create the directory containing docker-compose.yml
+      shell: mkdir devops-assessment
       args:
         chdir: /home/ec2-user
 
+    - name: Upload docker-compose.yml to the server
+      copy:
+        src: ../../docker-compose.yml
+        dest: /home/ec2-user/devops-assessment/docker-compose.yml
+        owner: ec2-user
+        group: ec2-user
+        mode: '0644'
+
     - name: Run docker-compose 
-      shell: docker-compose down -d
+      shell: docker-compose up -d
       args:
         chdir: /home/ec2-user/devops-assessment
+
